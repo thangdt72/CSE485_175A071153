@@ -13,17 +13,6 @@ $resultnh = mysqli_query($conn, $sqlnh);
 $resultmh = mysqli_query($conn, $sqlmh);
 $resultlh = mysqli_query($conn, $sqllh);
 ?>
-    <!-- BEGIN: HEADER -->
-    <header class="jumbotron text-center row"
-style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20px;"> 
-      <div class="col-sm-4">
-        <img class="img-fluid float-left" src="Skins/Images/logo.png" alt="Logo"> 
-      </div>
-      <div class="col-sm-6">
-        <h1 class="blue-text mb-4 font-bold">Lịch Trình Giảng Dạy</h1>
-      </div>
-      </header>
-    <!-- END: HEADER -->
 <main>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -39,7 +28,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
             <a class="nav-link" href="#">Lịch trình giảng dạy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dangnhap.php">Đăng nhập</a>
+            <a class="nav-link" href="#">Đăng nhập</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -59,7 +48,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
           <?php
           if (mysqli_num_rows($resultnh) > 0) {
             while ($rownh = mysqli_fetch_assoc($resultnh)) {
-              echo '<option value="' . $rownh['MaNganh'] . '" >' . $rownh['TenNganh'] . '</option>';
+              echo '<option value="' . $rownh['MaNganh'] . '" onchange= "">' . $rownh['TenNganh'] . '</option>';
             }
           }
           ?>
