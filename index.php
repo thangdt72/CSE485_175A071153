@@ -54,15 +54,15 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
         <label class="form-control-lable">Ngành học:</label>
       </div>
       <div class="col-md-3">
-        <select name="nganhhoc" id="nganhhoc" href="chonmon.php" class="form-control">
+        <select name="nganhhoc" id="nganhhoc"  onchange="chonmon.php" class="form-control">
           <option value> </option>
           <?php
           if (mysqli_num_rows($resultnh) > 0) {
             while ($rownh = mysqli_fetch_assoc($resultnh)) {
-              echo '<option value="' . $rownh['MaNganh'] . '" >' . $rownh['TenNganh'] . '</option>';
+              echo '<option value="' . $rownh['MaNganh'] . '" ><a href="chonmon.php">' . $rownh['TenNganh'] . '</a></option>';
             }
           }
-          ?>
+          ?> 
         </select>
       </div>
       <div class="col-md-1">

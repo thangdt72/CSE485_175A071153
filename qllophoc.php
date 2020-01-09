@@ -40,8 +40,8 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
             <?php
               if (mysqli_num_rows($resultlh) > 0) {
                 while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-                  echo '<tr> <td><a href="suakhoahoc.html"><img src="Skins/Images/edit.gif" border="0"></a></td>';
-                  echo '<td><a href="#"><img src="Skins/Images/deleted.jpg" border="0"></a></td>';
+                  echo '<tr> <td><a href="sualop.php?id='.$rowlh['MaLop'].'"><img src="Skins/Images/edit.gif" border="0"></a></td>';
+                  echo '<td><a href="xoalop.php?id='.$rowlh['MaLop'].'"><img src="Skins/Images/deleted.jpg" border="0"></a></td>';
                   echo '<td>'.$rowlh['MaLop'].'</td>';
                   echo '<td>'.$rowlh['TenLop'].'</td>';
                   echo '<td>'.$rowlh['MaMon'].'</td>';

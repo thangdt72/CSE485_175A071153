@@ -18,7 +18,7 @@ if($_SESSION['quyen']!=1){
         mysqli_set_charset($conn,'UTF8');
         if(mysqli_query($conn,$sql)){
             echo 'Thêm giảng viên thành công';
-            echo'<div class = "clear"><a href="admin.php">Về trang chủ</a></div>';
+            echo'<div class = "clear"><a href="qllophoc.php">Về trang chủ</a></div>';
         };
     }
     else{

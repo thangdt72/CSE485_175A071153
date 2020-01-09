@@ -7,8 +7,7 @@ if (isset($_POST['btnlogin'])) {
     $email = trim($_POST['email']);
     $matkhau = trim($_POST['matkhau']);
 
-    require("connect.php");
-
+    require('connect.php');
     $sql = "Select * from taikhoan where Email = '$email'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) == 1) {
@@ -20,7 +19,7 @@ if (isset($_POST['btnlogin'])) {
                 header('Location: admin.php');
             } else {
                 if ($row['TrangThai'] == '1') {
-                    header('Location: giangvien.php');
+                    header('Location: giangvien.php?id='.$row['MaGV'].'');
                 } else {
 
                     echo '<script language="javascript">';

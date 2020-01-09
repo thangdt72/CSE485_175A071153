@@ -1,9 +1,9 @@
 <?php
 include("header.php");
 require('connect.php');
-$sqllh  = "select * from giangvien order by TenGV";
+$sqlgv  = "select * from giangvien order by TenGV";
 mysqli_set_charset($conn, 'UTF8');
-$resultlh = mysqli_query($conn, $sqllh);
+$resultgv = mysqli_query($conn, $sqlgv);
 ?>
     <!-- BEGIN: HEADER -->
     <header class="jumbotron text-center row"
@@ -37,15 +37,15 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
               <td width="50">Email</td>																												
             </tr>
             <?php
-              if (mysqli_num_rows($resultlh) > 0) {
-                while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-                  echo '<tr><td><a href="suakhoahoc.html"><img src="Skins/Images/edit.gif" border="0"></a></td>';
-                  echo '<td><a href="#"><img src="Skins/Images/deleted.jpg" border="0"></a></td>';
-                  echo '<td>'.$rowlh['MaGV'].'</td>';
-                  echo '<td>'.$rowlh['TenGV'].'</td>';
-                  echo '<td>'.$rowlh['NgaySinh'].'</td>';
-                  echo '<td>'.$rowlh['QueQuan'].'</td>';
-                  echo '<td>'.$rowlh['Email'].'</td><tr>';
+              if (mysqli_num_rows($resultgv) > 0) {
+                while ($rowgv = mysqli_fetch_assoc($resultgv)) {
+                  echo '<tr><td><a href="suagv.php?id='.$rowgv['MaGV'].'"><img src="Skins/Images/edit.gif" border="0"></a></td>';
+                  echo '<td><a href="xoagv.php?id='.$rowgv['MaGV'].'"><img src="Skins/Images/deleted.jpg" border="0"></a></td>';
+                  echo '<td>'.$rowgv['MaGV'].'</td>';
+                  echo '<td>'.$rowgv['TenGV'].'</td>';
+                  echo '<td>'.$rowgv['NgaySinh'].'</td>';
+                  echo '<td>'.$rowgv['QueQuan'].'</td>';
+                  echo '<td>'.$rowgv['Email'].'</td><tr>';
                 }
               }
             ?>

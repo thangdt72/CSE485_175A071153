@@ -54,7 +54,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
   </div>
 <div class="form-group row">
     <div class="col-sm-4">
-	<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="taonganh" name="taonganh">Tạo môn học</button>
+	<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="taomon" name="taomon">Tạo môn học</button>
     </div>
 	</div>
 	</form>
