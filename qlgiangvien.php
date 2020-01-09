@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 require('connect.php');
-$sqllh  = "select MaLop,TenLop,MaMon,GiaiDoan,HocKy,NamHoc,DiaDiem,TenGV from lophoc,giangvien where lophoc.MaGV=giangvien.MaGV order by TenLop";
+$sqllh  = "select * from giangvien order by TenGV";
 mysqli_set_charset($conn, 'UTF8');
 $resultlh = mysqli_query($conn, $sqllh);
 ?>
@@ -23,31 +23,29 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
 ?>
 <!-- Center Column Content Section -->
   <div class="col-sm-10">
-     <h2 class="text-center">Quản Lý Lớp Học Phần</h2>
-     <a href="lopmoi.php" class="col-sm-1">Thêm lớp</a>
+     <h2 class="text-center">Quản Lý Giảng Viên</h2>
+     <a href="giangvienmoi.php" class="col-sm-1">Thêm giảng viên</a>
      <div class="list-course">
 					<table class="list-course" background-color="#FFFFFF">
 						<tbody><tr class="row-first">
-							<td width="20">Sửa</td>
-							<td width="20">Xóa</td>
-							<td width="150">Mã lớp</td>
-              <td width="300">Tên lớp</td>
-              <td width="70">Mã môn</td>														
-              <td width="150">Thời Gian</td>
-              <td width="80">Địa điểm</td>
-              <td width="180">Giảng Viên</td>																												
+							<td width="30">Sửa</td>
+							<td width="30">Xóa</td>
+							<td width="120">Mã giảng viên</td>
+              <td width="200">Tên giảng viên</td>
+              <td width="120">Ngày sinh</td>														
+              <td width="200">Quê quán</td>
+              <td width="50">Email</td>																												
             </tr>
             <?php
               if (mysqli_num_rows($resultlh) > 0) {
                 while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-                  echo '<tr> <td><a href="suakhoahoc.html"><img src="Skins/Images/edit.gif" border="0"></a></td>';
+                  echo '<tr><td><a href="suakhoahoc.html"><img src="Skins/Images/edit.gif" border="0"></a></td>';
                   echo '<td><a href="#"><img src="Skins/Images/deleted.jpg" border="0"></a></td>';
-                  echo '<td>'.$rowlh['MaLop'].'</td>';
-                  echo '<td>'.$rowlh['TenLop'].'</td>';
-                  echo '<td>'.$rowlh['MaMon'].'</td>';
-                  echo '<td>'.$rowlh['NamHoc'].'</td>';
-                  echo '<td>'.$rowlh['DiaDiem'].'</td>';
-                  echo '<td>'.$rowlh['TenGV'].'</td><tr>';
+                  echo '<td>'.$rowlh['MaGV'].'</td>';
+                  echo '<td>'.$rowlh['TenGV'].'</td>';
+                  echo '<td>'.$rowlh['NgaySinh'].'</td>';
+                  echo '<td>'.$rowlh['QueQuan'].'</td>';
+                  echo '<td>'.$rowlh['Email'].'</td><tr>';
                 }
               }
             ?>

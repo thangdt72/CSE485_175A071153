@@ -20,25 +20,9 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
     <!-- END: HEADER -->
     <div class="row" style="padding-left: 0px;">
 <!-- Left-side Column Menu Section -->
-    <nav class="col-sm-2">
-        <ul class="nav nav-pills flex-column">
-		    <li class="nav-item">
-          <a class="nav-link active" href="admin.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nganhmoi.php">Tạo ngành học</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="monmoi.php">Tạo môn học</a>
-        </li>
-		 <li class="nav-item">
-          <a class="nav-link" href="qllophoc.php">QL lớp học phần</a>
-        </li>
-		 <li class="nav-item">
-          <a class="nav-link" href="qlgiaovien.php">QL Tài khoản giáo viên</a>
-        </li> 
-      </ul>
-  </nav>
+<?php
+  include("menuadmin.php");
+?>
 <!-- Center Column Content Section -->
 <div class="col-sm-10">
 <h2 class="h2 text-center">Tạo Lớp Học</h2>

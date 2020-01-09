@@ -5,13 +5,13 @@ require('connect.php');
 <!-- BEGIN: MAIN NAVIGATION -->
 
 <?php
+$nganhhoc = trim($_POST['nganhhoc']);
 $sqlnh  = "select * from NganhHoc";
-$sqlmh  = "select * from MonHoc where ";
-$sqllh  = "select * from LopHoc";
+$sqlmh  = "select TenMon from MonHoc,NganhHoc where MonHoc.MaNganh=NganhHoc.MaNganh and TenNganh='$matkhau'";
 mysqli_set_charset($conn, 'UTF8');
 $resultnh = mysqli_query($conn, $sqlnh);
 $resultmh = mysqli_query($conn, $sqlmh);
-$resultlh = mysqli_query($conn, $sqllh);
+
 ?>
     <!-- BEGIN: HEADER -->
     <header class="jumbotron text-center row"
@@ -48,14 +48,14 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
         </form>
       </div>
     </nav>
-  
+
     <div class="row">
       <div class="col-md-1">
         <label class="form-control-lable">Ngành học:</label>
       </div>
       <div class="col-md-3">
         <select name="nganhhoc" id="nganhhoc" href="chonmon.php" class="form-control">
-          <option value> </option>
+          <option value="nganhhoc"><?php $nganhhoc ?></option>
           <?php
           if (mysqli_num_rows($resultnh) > 0) {
             while ($rownh = mysqli_fetch_assoc($resultnh)) {
@@ -72,7 +72,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       <div class="col-md-3">
         <select name="monhoc" id="monhoc" class="form-control">
         <?php
-          if (mysqli_num_rows($resultnh) > 0) {
+          if (mysqli_num_rows($resultmh) > 0) {
             while ($rowmh = mysqli_fetch_assoc($resultmh)) {
               echo '<option value="' . $rowmh['MaMon'] . '">' . $rowmh['TenMon'] . '</option>';
             }
@@ -86,14 +86,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       <div class="col-md-3">
         <select name="lophoc" id="lophoc" class="form-control">
-        <?php
-          if (mysqli_num_rows($resultnh) > 0) {
-            while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-              echo '<option value="' . $rowlh['MaLop'] . '">' . $rowlh['TenLop'] . '</option>';
-            }
-          }
-
-          ?>
+            <option value> </option>
         </select>
       </div>
     </div>
