@@ -12,7 +12,9 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
         <h1 class="blue-text mb-4 font-bold">Quản Lý Hệ Thống</h1>
       </div>
       </header>
-    <!-- END: HEADER -->
+    <!-- END: HEADER -->    
+  <main>
+    <div class="container">
     <div class="row" style="padding-left: 0px;">
 <!-- Left-side Column Menu Section -->
 <?php
@@ -62,6 +64,8 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
 </div>
 
   </div>
+  </div>
+</main>
 <?php
 include("footer.php")
 ?>

@@ -2,10 +2,10 @@
 include("header.php");
 require('connect.php');
 $laymagv=$_GET['id'];
-$sqllh  = "select * from LopHoc where MaGV='$laymagv'";
-$sqlmh  = "select monhoc.MaMon,TenMon,MaGV from MonHoc,LopHoc where MonHoc.MaMon=LopHoc.MaMon and MaGV='$laymagv'";
+
+$sqlmh  = "select distinct monhoc.MaMon,TenMon,MaGV from MonHoc,LopHoc where MonHoc.MaMon=LopHoc.MaMon and MaGV='$laymagv'";
 mysqli_set_charset($conn, 'UTF8');
-$resultlh = mysqli_query($conn, $sqllh);
+
 $resultmh = mysqli_query($conn, $sqlmh);
 ?>
     <!-- BEGIN: HEADER -->
@@ -19,13 +19,20 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       </header>
     <!-- END: HEADER -->
+    <main>
     <div class="container">
+    <form action="chonmon.php?id="methd="POST">
     <div class="row">
+    <div class="col-md-1">
+    <select name="id" id="id">
+        <option value="<?php echo $laymagv?>"><?php echo $laymagv?></option>
+      </select>
+      </div>
     <div class="col-md-1">
         <label class="form-control-lable">Môn học:</label>
       </div>
       <div class="col-md-3">
-        <select name="monhoc" id="monhoc" class="form-control">
+        <select name="monhoc" id="monhoc" class="form-control" onchange = "this.form.submit();">
         <?php
           if (mysqli_num_rows($resultmh) > 0) {
             while ($rowmh = mysqli_fetch_assoc($resultmh)) {
@@ -40,17 +47,14 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       <div class="col-md-3">
         <select name="lophoc" id="lophoc" class="form-control">
-        <?php
-          if (mysqli_num_rows($resultlh) > 0) {
-            while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-              echo '<option value="' . $rowlh['MaLop'] . '">' . $rowlh['TenLop'] . '</option>';
-            }
-          }
-          ?>
+            <option value=""></option>
         </select>
       </div>
     </div>
+    </form>
     </div>
+  </main>
+  </div>
 <?php
 include("footer.php")
 ?>

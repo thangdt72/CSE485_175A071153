@@ -6,10 +6,10 @@ require('connect.php');
 
 <?php
 $laymamon=$_GET['monhoc'];
-$laymagv=$_GET['id'];
+$laymanganh=$_GET['nganhhoc'];
 $laymalop=$_GET['lophoc'];
-$sqllh  = "select * from LopHoc where MaMon='$laymamon' and MaGV='$laymagv'";
-$sqlmh  = "select distinct monhoc.MaMon,TenMon,MaGV from MonHoc,LopHoc where MonHoc.MaMon=LopHoc.MaMon and MaGV='$laymagv'";
+$sqllh  = "select * from LopHoc where MaMon='$laymamon' and MaGV='$laymanganh'";
+$sqlmh  = "select distinct monhoc.MaMon,TenMon,MaGV from MonHoc,LopHoc where MonHoc.MaMon=LopHoc.MaMon and MaGV='$laymanganh'";
 $sqlkh= "select * from KeHoach where MaLop='$laymalop' order by Buoi";
 $sqllt= "select * from LichTrinh where MaLop='$laymalop' order by Buoi";
 $sqltenmon  = "select TenMon from MonHoc where MaMon='$laymamon'";
@@ -37,7 +37,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
     <div class="row">
     <div class="col-md-1">
     <select name="id" id="id">
-        <option value="<?php echo $laymagv?>"><?php echo $laymagv?></option>
+        <option value="<?php echo $laymanganh?>"><?php echo $laymanganh?></option>
       </select>
       </div>
     <div class="col-md-1">
@@ -126,7 +126,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
               </tbody>
             </table>
           </div>
-          <a href="lichtrinhgd.php?id=<?php echo $laymagv?>&monhoc=<?php echo $laymamon?>&lophoc=<?php echo $laymalop?>" class="col-sm-1">Cập nhật kế hoạch</a>
+          <a href="lichtrinhgd.php?id=<?php echo $laymanganh?>&monhoc=<?php echo $laymamon?>&lophoc=<?php echo $laymalop?>" class="col-sm-1">Cập nhật kế hoạch</a>
         </div>
       </div>
     </form>

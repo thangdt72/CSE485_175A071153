@@ -6,12 +6,8 @@ require('connect.php');
 
 <?php
 $sqlnh  = "select * from NganhHoc";
-$sqlmh  = "select * from MonHoc where ";
-$sqllh  = "select * from LopHoc";
 mysqli_set_charset($conn, 'UTF8');
 $resultnh = mysqli_query($conn, $sqlnh);
-$resultmh = mysqli_query($conn, $sqlmh);
-$resultlh = mysqli_query($conn, $sqllh);
 ?>
     <!-- BEGIN: HEADER -->
     <header class="jumbotron text-center row"
@@ -33,29 +29,18 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kế hoạch giảng dạy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lịch trình giảng dạy</a>
-          </li>
-          <li class="nav-item">
+
             <a class="nav-link" href="dangnhap.php">Đăng nhập</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-        </form>
-      </div>
-    </nav>
-  
-    <div class="row">
+   <form action="svchonmon.php?nganhhoc=" methd="POST">
+
+      <div class="row">
       <div class="col-md-1">
         <label class="form-control-lable">Ngành học:</label>
       </div>
       <div class="col-md-3">
-        <select name="nganhhoc" id="nganhhoc"  onchange="chonmon.php" class="form-control">
-          <option value> </option>
+        <select name="nganhhoc" id="nganhhoc" class="form-control" onchange = "this.form.submit();">
           <?php
           if (mysqli_num_rows($resultnh) > 0) {
             while ($rownh = mysqli_fetch_assoc($resultnh)) {
@@ -71,14 +56,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       <div class="col-md-3">
         <select name="monhoc" id="monhoc" class="form-control">
-        <?php
-          if (mysqli_num_rows($resultnh) > 0) {
-            while ($rowmh = mysqli_fetch_assoc($resultmh)) {
-              echo '<option value="' . $rowmh['MaMon'] . '">' . $rowmh['TenMon'] . '</option>';
-            }
-          }
-
-          ?>
+          <option value=""></option>
         </select>
       </div>
       <div class="col-md-1">
@@ -86,21 +64,23 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       <div class="col-md-3">
         <select name="lophoc" id="lophoc" class="form-control">
-        <?php
-          if (mysqli_num_rows($resultnh) > 0) {
-            while ($rowlh = mysqli_fetch_assoc($resultlh)) {
-              echo '<option value="' . $rowlh['MaLop'] . '">' . $rowlh['TenLop'] . '</option>';
-            }
-          }
-
-          ?>
+        <option value=""></option>
         </select>
       </div>
     </div>
+        </form>
+      </div>
+    </nav>
     <div class="box_center" style="postion:relative">
-      <h4>TIN TỨC</h4>
+      <div class="col-sm-12">
+          <h2 class="text-center">This is the Home Page</h2>
+              <p>The home page content. The home page content. The home page content. The home page content. <br>
+              The home page content. The home page content. The home page content. The home page content. <br>
+              The home page content. The home page content. <br>
+              The home page content. The home page content. The home page content. </p>
+              </div>
+          </div>
     </div>
-  </div>
 </main>
 <!-- END: MAIN NAVIGATION -->
 <?php

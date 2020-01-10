@@ -18,7 +18,7 @@ if($_SESSION['quyen']!=1){
             header('Location: qlgiangvien.php');
         }
         else{
-            echo 'Mã giảng viên này đã tồn tại';
+            echo 'Mã giảng viên này đã bị trùng';
             echo'<div><a href="qlgiangvien.php">Nhấn để quay lại</a><div>';
         }
     mysqli_close($conn);
