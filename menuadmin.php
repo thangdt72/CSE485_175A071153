@@ -1,7 +1,7 @@
 <nav class="col-sm-2">
         <ul class="nav nav-pills flex-column">
 		    <li class="nav-item">
-          <a class="nav-link active" href="admin.php">Home</a>
+          <a class="nav-link active" href="admin.php">Trang chủ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="nganhmoi.php">Tạo ngành học</a>

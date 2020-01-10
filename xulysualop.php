@@ -22,7 +22,7 @@ if($_SESSION['quyen']!=1){
             header('Location: qllophoc.php');
         }
         else{
-            echo 'Mã lớp học phần này đã tồn tại';
+            echo 'Mã lớp học phần này đã tồn tại hoặc đang diễn ra nên không thể thay đổi';
             echo'<div><a href="qllophoc.php">Nhấn để quay lại</a><div>';
         }
     mysqli_close($conn);

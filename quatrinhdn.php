@@ -10,7 +10,7 @@ if (isset($_POST['btnlogin'])) {
     require('connect.php');
     $sql = "Select * from taikhoan where Email = '$email'";
     $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) == 1 ) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($matkhau,$row['MatKhau'])) {
             $_SESSION['quyen'] = $row['MaQuyen'];

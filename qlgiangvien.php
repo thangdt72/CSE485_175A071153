@@ -26,7 +26,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
      <h2 class="text-center">Quản Lý Giảng Viên</h2>
      <a href="giangvienmoi.php" class="col-sm-1">Thêm giảng viên</a>
      <div class="list-course">
-					<table class="list-course" background-color="#FFFFFF">
+					<table class="table table-bordered" >
 						<tbody><tr class="row-first">
 							<td width="30">Sửa</td>
 							<td width="30">Xóa</td>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Đăng nhập</title>
+  <title>Đăng Ký</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,21 +17,25 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Đăng Nhập Hệ Thống</h5>
-            <form class="form-signin" method="POST" action="quatrinhdn.php">
+            <h5 class="card-title text-center">Đăng Ký </h5>
+            <form class="form-signin" method="POST" action="xulydangky.php">
 
               <div class="form-label-group">
-                <input type="email" class="form-control" id="defaultForm-email" name="email" placeholder="Địa chỉ email" required autofocus>
+                <input type="text" class="form-control" id="TenTK" name="tentk" placeholder="Tên tài khoản" required autofocus>
               </div>
               <div class="form-label-group">
                 <input type="password" class="form-control" id="defaultForm-password" name="matkhau" placeholder="Mật khẩu" required>
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="btnlogin" name="btnlogin">Đăng nhập</button>
+              <div class="form-label-group">
+                <input type="email" class="form-control" id="defaultForm-email" name="email" placeholder="Địa chỉ email" required autofocus>
+              </div>
+              <div class="form-label-group">
+                <input type="text" class="form-control" id="Sdt" name="sdt" placeholder="Số điện thoại" required autofocus>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="dangky" name="dangky">Đăng ký</button>
               <hr class="my-4">
             </form>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button"><a href="dangky.php" style="color: #ffffff;">Đăng ký</a></button>
-              
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button"><a href="index.php" style="color: #ffffff;">Trở Về</a></button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button"><a href="dangnhap.php"style="color: #ffffff;">Thoát</a></button>
           </div>
         </div>
       </div>

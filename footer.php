@@ -1,5 +1,5 @@
     <!-- BEGIN: FOOTER -->
-    <footer>
+    <footer style="margin-bottom:2px; background: #dee2e6; padding:20px;border-radius: 5px;">
         <div class="container">
           <div class="col-xs-1 text-left">
             <p class="coppy">© 2020 - TRƯỜNG ĐẠI HỌC THỦY LỢI</p>

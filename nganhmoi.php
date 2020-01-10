@@ -12,6 +12,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
       </div>
       </header>
     <!-- END: HEADER -->
+    <main>
     <div class="row" style="padding-left: 0px;">
 <!-- Left-side Column Menu Section -->
 <?php
@@ -42,6 +43,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #0073e6); padding:20
 </div>
 
   </div>
+  </main>
 <?php
 include("footer.php")
 ?>

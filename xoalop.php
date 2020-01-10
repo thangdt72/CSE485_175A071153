@@ -12,5 +12,9 @@ if($_SESSION['quyen']!=1){
         if(mysqli_query($conn,$sql)){
             header('Location: qllophoc.php');
         }
+        else{
+            echo 'Không thể xóa vì lớp học phần đang diễn ra và đã có kế hoạch giảng dạy';
+            echo '<div><a href="qllophoc.php">Nhấp để trở về</a></div>';
+        }
     mysqli_close($conn);
 ?>
